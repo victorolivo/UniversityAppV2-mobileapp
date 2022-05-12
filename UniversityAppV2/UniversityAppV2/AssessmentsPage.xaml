@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:model="clr-namespace:UniversityAppV2.Models"
+             x:Class="UniversityAppV2.AssessmentsPage"
+             BackgroundImageSource="b2"
+             x:Name="AssessmentsRef">
+    <ContentPage.Content>
+
+        <RefreshView x:Name="AssessmentsRefreshView" Refreshing="AssessmentsRefreshView_Refreshing">
+            <ScrollView BindingContext="{x:Reference Name=AssessmentsRef}">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <Frame BackgroundColor="AliceBlue" CornerRadius="5" Opacity=".9" HorizontalOptions="Start" Padding="10">
+                        <StackLayout>
+                            <StackLayout Orientation="Horizontal">
+                                <Frame Padding="0" CornerRadius="100" Margin="30,40,0,10" Grid.Row="0" Grid.Column="0" IsClippedToBounds="True" BorderColor="Black" Background="black">
+                                    <Image Source="professor" Aspect="AspectFit" WidthRequest="100"/>
+                                </Frame>
+                                <Image Source="wguLogo" Aspect="AspectFit" WidthRequest="150" Grid.Row="0" Grid.Column="1" HorizontalOptions="End" Margin="100,50,10,20"/>
+                                
+                            </StackLayout>
+                            <StackLayout Grid.Row="1" Grid.Column="0" Margin="20,0">
+
+                                <StackLayout>
+                                    <Label x:Name="instructorNameLbl" Margin="0,0" Style="{StaticResource Header}" FontSize="20" Padding="0"/>
+                                    <Label x:Name="instructorPhoneLbl" Margin="0" Style="{StaticResource nText}" FontSize="16" Padding="0"/>
+                                    <Label x:Name="instructorEmailLbl" Margin="0" Style="{StaticResource nText}" FontSize="16" Padding="0"/>
+                                    <Label x:Name="courseNameLbl" Margin="0" Style="{StaticResource Header}" FontSize="16" Padding="0"/>
+                                    <Label x:Name="courseDueDateLbl" Margin="0" Style="{StaticResource nText}" FontSize="16" Padding="0"/>
+                                    <Button x:Name="viewNotesBtn" Text="Notes" Margin="0,0" Style="{StaticResource link}" FontSize="12" Padding="0" Clicked="viewNotesBtn_Clicked"/>
+                                </StackLayout>
+
+                            </StackLayout>
+                        </StackLayout>
+                    </Frame>
+                    <StackLayout Grid.Row="2">
+                        <Label Text="Assessments" FontSize="30" Style="{StaticResource Header}"/>
+                        <StackLayout Orientation="Horizontal" Margin="15,0,0,0">
+                            <Label Text="Type" Style="{StaticResource Header}" FontSize="Large"/>
+                            <Label Text="Details" Style="{StaticResource Header}" Margin="65,15,15,15" FontSize="Large"/>
+                        </StackLayout>
+
+                        <ListView 
+                            x:Name="assessmentsList"
+                            HasUnevenRows="True"
+                            ItemTapped="assessmentsList_ItemTapped">
+
+                            <ListView.ItemTemplate>
+                                <DataTemplate x:DataType="model:Assessment">
+                                    <ViewCell>
+                                        <ViewCell.ContextActions>
+                                            <MenuItem x:Name="ModifyAssessment" Text="Modify" Clicked="ModifyAssessment_Clicked"/>
+                                            <MenuItem x:Name="DeleteAssessment" Text="Delete" IsDestructive="True" Clicked="DeleteAssessment_Clicked"/>
+                                        </ViewCell.ContextActions>
+                                        <Grid Padding="10">
+
+                                            <Frame BackgroundColor="AliceBlue" CornerRadius="10" Opacity=".8">
+                                                <StackLayout Orientation="Horizontal">
+                                                    <Label Text="{Binding Type}" WidthRequest="120" FontSize="50" Margin="5,0,0,0"/>
+                                                    <StackLayout>
+                                                        <Label Text="{Binding Name}" Style="{StaticResource nText}" FontSize="20"/>
+                                                        <Label Text="{Binding FStartDate}" Style="{StaticResource nText}"/>
+                                                        <Label Text="{Binding FEndDate}" Style="{StaticResource nText}"/>
+                                                    </StackLayout>
+                                                </StackLayout>
+                                            </Frame>
+
+                                        </Grid>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+
+                            <ListView.Footer>
+                                <Button Text="Add Assessment" HorizontalOptions="CenterAndExpand" Margin="20" x:Name="AddAssessmentBtn" Clicked="AddAssessmentBtn_Clicked"/>
+                            </ListView.Footer>
+
+                        </ListView>
+                        
+                    </StackLayout>
+                </Grid>
+            </ScrollView>
+        </RefreshView>
+        
+    </ContentPage.Content>
+</ContentPage>

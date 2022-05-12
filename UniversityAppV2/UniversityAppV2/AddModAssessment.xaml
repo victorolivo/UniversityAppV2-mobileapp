@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="UniversityAppV2.AddModAssessment"
+             x:Name="AddModAssessmentRef">
+    <ContentPage.Content>
+        <ScrollView>
+
+            <StackLayout BindingContext="{x:Reference Name=AddModAssessmentRef}">
+                <Label x:Name="PageTitleLbl" Style="{StaticResource Header}" FontSize="30" HorizontalOptions="Center" TextColor="#292424" Margin="15,15,15,0"/>
+
+                <Label Text="Name:" Margin="15,10,0,0" FontSize="14" Style="{StaticResource nText}"/>
+                <Frame Padding="0" Margin="10,0">
+                    <Entry x:Name="NameField" HorizontalOptions="FillAndExpand" BackgroundColor="Wheat" Text="{Binding Name}"/>
+                </Frame>
+
+                <Label Text="Type:" Margin="15,10,0,0" FontSize="14" Style="{StaticResource nText}"/>
+                <Frame Padding="0" Margin="10,0">
+                    <Picker x:Name="TypeField" Title="select a type" BackgroundColor="Wheat" SelectedItem="{Binding Type}">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>PA</x:String>
+                                <x:String>OA</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+                </Frame>
+
+                <Button Text="Submit" x:Name="SubmitBtn" Margin="30" VerticalOptions="EndAndExpand" HorizontalOptions="EndAndExpand" BackgroundColor="Chocolate" Clicked="SubmitBtn_Clicked"/>
+            </StackLayout>
+
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

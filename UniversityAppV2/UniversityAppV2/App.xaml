@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="UniversityAppV2.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Primary"></Color>
+
+            <Style TargetType="Label" x:Key="Header">
+                <Setter Property="FontFamily" Value="heavitas"/>
+                <Setter Property="Margin" Value="15"/>
+                <Setter Property="TextColor" Value="#292424"/>
+            </Style>
+            <Style TargetType="Label" x:Key="nText">
+                <Setter Property="FontFamily" Value="cream"/>
+                <Setter Property="TextColor" Value="#292424"/>
+            </Style>
+            <Style TargetType="Button" x:Key="link">
+                <Setter Property="FontFamily" Value="cream"/>
+                <Setter Property="TextColor" Value="Sienna"/>
+                <Setter Property="HorizontalOptions" Value="End"/>
+                <Setter Property="Padding" Value="0"/>
+                <Setter Property="Opacity" Value="0.8"/>
+            </Style>
+        </ResourceDictionary>
+
+    </Application.Resources>
+</Application>

@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:model="clr-namespace:UniversityAppV2.Models"
+             x:Class="UniversityAppV2.CoursesPage"
+             x:Name="CoursesPageRef"
+             BackgroundImageSource="b2">
+    <ContentPage.Content>
+        <RefreshView x:Name="CourseRefreshView" Refreshing="CourseRefreshView_Refreshing">
+            <ScrollView BindingContext="{x:Reference Name=CoursesPageRef}">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Frame BackgroundColor="AliceBlue" CornerRadius="5" Opacity=".9" HorizontalOptions="CenterAndExpand" Padding="10" Grid.Row="0">
+                        <StackLayout>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                                <StackLayout Padding="5" HorizontalOptions="EndAndExpand">
+                                    <Label x:Name="TermTitleLbl" FontSize="25" Margin="0,0" Style="{StaticResource Header}"/>
+                                    <Label x:Name="StartDateLbl" Margin="0" Style="{StaticResource Header}" Padding="0"/>
+                                    <Label x:Name="EndDateLbl" Margin="0" Style="{StaticResource Header}" Padding="0"/>
+                                </StackLayout>
+                                <Image Source="wguLogo" Aspect="AspectFit" WidthRequest="150" Grid.Row="0" Grid.Column="1" HorizontalOptions="End" Margin="20,50,10,20"/>
+                            </StackLayout>
+
+                        </StackLayout>
+                    </Frame>
+                    <StackLayout Grid.Row="1">
+                        <Label Text="Courses" FontSize="30" Style="{StaticResource Header}"/>
+                        <StackLayout Orientation="Horizontal" Margin="15,0,0,0">
+                            <Label Text="Cu" Style="{StaticResource Header}" FontSize="Large"/>
+                            <Label Text="Details" Style="{StaticResource Header}" Margin="65,15,15,15" FontSize="Large"/>
+                        </StackLayout>
+
+                        <ListView 
+                            x:Name="coursesList"
+                            HasUnevenRows="True"
+                            ItemTapped="coursesList_ItemTapped">
+
+                            <ListView.ItemTemplate>
+                                <DataTemplate x:DataType="model:Course">
+                                    <ViewCell>
+                                        <ViewCell.ContextActions>
+                                            <MenuItem x:Name="ModifyCourse" Text="Modify" Clicked="ModifyCourse_Clicked"/>
+                                            <MenuItem x:Name="DeleteCourse" Text="Delete" IsDestructive="True" Clicked="DeleteCourse_Clicked"/>
+                                        </ViewCell.ContextActions>
+                                        <Grid Padding="10">
+
+                                            <Frame BackgroundColor="AliceBlue" CornerRadius="10" Opacity=".8">
+                                                <StackLayout Orientation="Horizontal">
+                                                    <Label Text="{Binding NumCus}" WidthRequest="120" FontSize="50" Margin="5,0,0,0"/>
+                                                    <StackLayout>
+                                                        <Label Text="{Binding Name}" Style="{StaticResource nText}" FontSize="20"/>
+                                                        <Label Text="{Binding FStartDate}" Style="{StaticResource nText}"/>
+                                                        <Label Text="{Binding FEndDate}" Style="{StaticResource nText}"/>
+                                                        <Label Text="{Binding Status}" Style="{StaticResource nText}"/>
+                                                    </StackLayout>
+                                                </StackLayout>
+                                            </Frame>
+
+                                        </Grid>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+
+                            <ListView.Footer>
+                                <Button Text="Add Course" HorizontalOptions="CenterAndExpand" Margin="20" x:Name="AddCourseBtn" Clicked="AddCourseBtn_Clicked"/>
+                            </ListView.Footer>
+
+                        </ListView>
+
+                    </StackLayout>
+
+                </Grid>
+
+            </ScrollView>
+        </RefreshView>
+
+    </ContentPage.Content>
+</ContentPage>
