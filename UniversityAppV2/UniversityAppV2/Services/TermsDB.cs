@@ -58,7 +58,7 @@ namespace UniversityAppV2.Services
             {
                 foreach (var c in coursesInTerm)
                 {
-                    _ = db.Delete<Course>(c.Id);
+                    RemoveCourse(c.Id);
                 }
             }
 
@@ -75,7 +75,7 @@ namespace UniversityAppV2.Services
             {
                 foreach (var a in assessmentsInCourse)
                 {
-                    _ = db.Delete<Assessment>(a.Id);
+                    RemoveAssessment(a.Id);
                 }
             }
 

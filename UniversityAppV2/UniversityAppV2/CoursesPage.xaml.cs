@@ -59,7 +59,6 @@ namespace UniversityAppV2
             TermsDB.UpdateTerm(CurrentTerm);
 
             CourseRefreshView_Refreshing(sender, e);
-            new MainPage();
         }
 
         private async void CourseRefreshView_Refreshing(object sender, EventArgs e)

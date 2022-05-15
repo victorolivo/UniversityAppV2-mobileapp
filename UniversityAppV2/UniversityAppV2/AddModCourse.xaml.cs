@@ -16,8 +16,8 @@ namespace UniversityAppV2
     {
 
         public string CourseName { get; set; }
-        public DateTime StartDate { get; set; } = DateTime.Now;
-        public DateTime EndDate { get; set; } = DateTime.Now.AddMonths(2);
+        public DateTime StartDate { get; set; }
+        public DateTime EndDate { get; set; }
         public int NumOfCus { get; set; }
         public string Status { get; set; }
         public string Notes { get; set; } = "";
@@ -40,6 +40,10 @@ namespace UniversityAppV2
             CurrentTerm = t;
             CurrentCourse = c;
             Modify = modify;
+            StartDateField.MinimumDate = CurrentTerm.StartDate;
+            StartDateField.MaximumDate = CurrentTerm.EndDate;
+            EndDateField.MinimumDate = CurrentTerm.StartDate;
+            EndDateField.MaximumDate = CurrentTerm.EndDate;
 
             if (Modify)
                 PrefillTxtFields();
@@ -141,7 +145,7 @@ namespace UniversityAppV2
             }
             else if (string.IsNullOrWhiteSpace(Phone) || Phone.Length != 10)
             {
-                App.Current.MainPage.DisplayAlert("Invalid Phone Number", "The phone number provided is not valid, must be a 10-digit phone number (All numbers)", "Ok");
+                App.Current.MainPage.DisplayAlert("Invalid Phone Number", "The phone number provided is not valid, must be a 10-digit phone number (All numbers). Avoid Country code and any special characters.", "Ok");
                 return false;
             }
             else if (string.IsNullOrWhiteSpace(Email))

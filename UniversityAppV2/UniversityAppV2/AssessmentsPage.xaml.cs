@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UniversityAppV2.Models;
+using UniversityAppV2.Services;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -19,26 +20,26 @@ namespace UniversityAppV2
             InitializeComponent();
             CurrentCourse = course;
             instructorNameLbl.Text = CurrentCourse.InstructorName;
-            instructorPhoneLbl.Text = CurrentCourse.InstructorPhoneNumber;
+            instructorPhoneLbl.Text = CurrentCourse.FInstructorPhoneNumber;
             instructorEmailLbl.Text = CurrentCourse.InstructorEmail;
             courseNameLbl.Text = CurrentCourse.Name;
-            courseDueDateLbl.Text = "Deadline: " + CurrentCourse.FEndDate;
+            courseDueDateLbl.Text = "Deadline: \n" + CurrentCourse.FEndDate;
         }
 
         private async void AssessmentsRefreshView_Refreshing(object sender, EventArgs e)
         {
             await Task.Delay(1000);
-            //db update
+            assessmentsList.ItemsSource = TermsDB.GetAllAssessmentsForCourse(CurrentCourse.Id);
             AssessmentsRefreshView.IsRefreshing = false;
         }
 
         protected override void OnAppearing()
         {
-            //db update ex. coursesList.ItemsSource = TermsDB.GetAllCoursesForTerm(CurrentTerm.Id);
+            assessmentsList.ItemsSource = TermsDB.GetAllAssessmentsForCourse(CurrentCourse.Id);
             base.OnAppearing();
         }
 
-        private async void assessmentsList_ItemTapped(object sender, ItemTappedEventArgs e)
+        private void assessmentsList_ItemTapped(object sender, ItemTappedEventArgs e)
         {
             ((ListView)sender).SelectedItem = null;
         }
@@ -51,12 +52,16 @@ namespace UniversityAppV2
 
         private void DeleteAssessment_Clicked(object sender, EventArgs e)
         {
+            var assessment = ((MenuItem)sender).BindingContext as Assessment;
 
+            TermsDB.RemoveAssessment(assessment.Id);
+
+            AssessmentsRefreshView_Refreshing(sender, e);
         }
 
         private void AddAssessmentBtn_Clicked(object sender, EventArgs e)
         {
-
+            Navigation.PushAsync(new AddModAssessment(false, CurrentCourse, null));
         }
 
         private void viewNotesBtn_Clicked(object sender, EventArgs e)

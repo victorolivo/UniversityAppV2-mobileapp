@@ -26,6 +26,7 @@ namespace UniversityAppV2
             Modify = modify;
             CurrentTerm = term;
             BindingContext = this;
+            StartDateField.MinimumDate = DateTime.Now;
 
             if (Modify)
                 PrefillTxtFields();

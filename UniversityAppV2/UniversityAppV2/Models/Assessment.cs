@@ -10,24 +10,17 @@ namespace UniversityAppV2.Models
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
         public string Name { get; set; }
-        public DateTime StartDate { get; set; }
-        public DateTime EndDate { get; set; }
+        public DateTime DueDate { get; set; }
         public string Type { get; set; }
         public int CourseId { get; set; }
 
         //Fomatted Dates
-        public string FStartDate
+       
+        public string FDueDate
         {
             get
             {
-                return StartDate.ToString("D");
-            }
-        }
-        public string FEndDate
-        {
-            get
-            {
-                return EndDate.ToString("D");
+                return DueDate.ToString("D");
             }
         }
     }

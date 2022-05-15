@@ -12,7 +12,7 @@
                 
                 <Label Text="Name:" Margin="15,10,0,0" FontSize="14" Style="{StaticResource nText}"/>
                 <Frame Padding="0" Margin="10,0">
-                    <Entry TextTransform="Uppercase" x:Name="NameField" HorizontalOptions="FillAndExpand" BackgroundColor="Wheat" Text="{Binding CourseName}"/>
+                    <Entry x:Name="NameField" HorizontalOptions="FillAndExpand" BackgroundColor="Wheat" Text="{Binding CourseName}"/>
                 </Frame>
 
                 <Label Text="Start Date:" Margin="15,10,0,0" FontSize="14" Style="{StaticResource nText}"/>

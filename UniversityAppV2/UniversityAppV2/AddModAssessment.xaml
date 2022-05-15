@@ -26,6 +26,11 @@
                     </Picker>
                 </Frame>
 
+                <Label Text="Due Date:" Margin="15,10,0,0" FontSize="14" Style="{StaticResource nText}"/>
+                <Frame Padding="0" Margin="10,0">
+                    <DatePicker x:Name="DueDateField" Format="D" VerticalOptions="CenterAndExpand" BackgroundColor="Wheat" Date="{Binding DueDate}"/>
+                </Frame>
+
                 <Button Text="Submit" x:Name="SubmitBtn" Margin="30" VerticalOptions="EndAndExpand" HorizontalOptions="EndAndExpand" BackgroundColor="Chocolate" Clicked="SubmitBtn_Clicked"/>
             </StackLayout>
 

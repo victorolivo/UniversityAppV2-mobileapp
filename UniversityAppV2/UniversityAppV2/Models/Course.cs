@@ -35,5 +35,14 @@ namespace UniversityAppV2.Models
                 return EndDate.ToString("D");
             }
         }
+
+        public string FInstructorPhoneNumber
+        {
+            get
+            {
+                long temp = Convert.ToInt64(InstructorPhoneNumber);
+                return $"{temp:(###) ###-####}";
+            }
+        }
     }
 }

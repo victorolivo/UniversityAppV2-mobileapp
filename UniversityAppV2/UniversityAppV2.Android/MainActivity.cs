@@ -19,7 +19,7 @@ namespace UniversityAppV2.Droid
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             LoadApplication(new App());
 
-            //this.SetStatusBarColor((Xamarin.Forms.Color.AliceBlue).ToAndroid());
+            this.SetStatusBarColor((Xamarin.Forms.Color.FromHex("#4c99fe")).ToAndroid());
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {

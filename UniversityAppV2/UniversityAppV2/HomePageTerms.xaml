@@ -5,6 +5,11 @@
              BackgroundImageSource="b2"
              x:Name="MainPageRef">
 
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="Add" Clicked="AddTermBtn_Clicked"/>
+    </ContentPage.ToolbarItems>
+
     <ContentPage.Content>
 
         <RefreshView x:Name="TermsRefreshView" Refreshing="TermsRefreshView_Refreshing">
@@ -19,15 +24,15 @@
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="Auto"/>
                     </Grid.RowDefinitions>
-                    <Frame BackgroundColor="AliceBlue" CornerRadius="5" Opacity=".9" HorizontalOptions="Start" Padding="10">
+                    <Frame BackgroundColor="AliceBlue" CornerRadius="5" Opacity=".9" Padding="10">
                         <StackLayout>
                             <StackLayout Orientation="Horizontal">
-                                <Frame Padding="0" CornerRadius="100" Margin="30,40,0,10" Grid.Row="0" Grid.Column="0" IsClippedToBounds="True" BorderColor="Black" Background="black">
+                                <Frame Padding="0" CornerRadius="100" Margin="30,20,0,10" Grid.Row="0" Grid.Column="0" IsClippedToBounds="True" BorderColor="Black" BackgroundColor="black">
                                     <Image Source="user" Aspect="AspectFit" WidthRequest="100"/>
                                 </Frame>
-                                <Image Source="wguLogo" Aspect="AspectFit" WidthRequest="150" Grid.Row="0" Grid.Column="1" HorizontalOptions="End" Margin="100,50,10,20"/>
+                                <Image Source="wguLogo" Aspect="AspectFit" WidthRequest="150" Grid.Row="0" Grid.Column="1" HorizontalOptions="EndAndExpand"/>
                             </StackLayout>
-                            <StackLayout Grid.Row="1" Grid.Column="0" Margin="20,0">
+                            <StackLayout Grid.Row="1" Grid.Column="0" Margin="10,0">
 
                                 <StackLayout>
                                     <Label Text="Victor Olivo" Margin="0,0" Style="{StaticResource Header}" FontSize="20" Padding="0"/>

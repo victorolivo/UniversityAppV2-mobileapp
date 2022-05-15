@@ -10,7 +10,8 @@ namespace UniversityAppV2
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage( new MainPage());
+            MainPage = new NavigationPage(new MainPage());
+            MainPage.BackgroundColor = Color.FromHex("#4c99fe");
         }
 
         protected override void OnStart()

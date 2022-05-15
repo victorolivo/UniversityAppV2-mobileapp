@@ -19,14 +19,14 @@ namespace UniversityAppV2.Models
         {
             get
             {
-                return StartDate.ToString("D");
+                return StartDate.ToString("Y");
             }
         }
         public string FEndDate 
         {
             get
             {
-                return EndDate.ToString("D");
+                return EndDate.ToString("Y");
             }
         }
     }
