@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:model="clr-namespace:UniversityAppV2.Models"
              x:Class="UniversityAppV2.CoursesPage"
              x:Name="CoursesPageRef"
-             BackgroundImageSource="b2">
+             BackgroundColor="#92b2fd">
 
     <ContentPage.ToolbarItems>
         <ToolbarItem IconImageSource="Add" Clicked="AddCourseBtn_Clicked"/>
@@ -22,7 +22,7 @@
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="Auto"/>
                     </Grid.RowDefinitions>
-                    <Frame BackgroundColor="AliceBlue" CornerRadius="5" Opacity=".9" Padding="10" Grid.Row="0">
+                    <Frame BackgroundColor="#f9fafe" CornerRadius="5" Opacity=".9" Padding="10" Grid.Row="0">
                         <StackLayout>
                             <StackLayout Orientation="Horizontal">
                                 <StackLayout Margin="5,10">
@@ -56,7 +56,7 @@
                                         </ViewCell.ContextActions>
                                         <Grid Padding="10">
 
-                                            <Frame BackgroundColor="AliceBlue" CornerRadius="10" Opacity=".8">
+                                            <Frame BackgroundColor="#f9fafe" CornerRadius="10" HasShadow="True">
                                                 <StackLayout Orientation="Horizontal">
                                                     <Label Text="{Binding NumCus}" WidthRequest="120" FontSize="50" Margin="5,0,0,0" VerticalOptions="Center"/>
                                                     <StackLayout>

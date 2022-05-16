@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:model="clr-namespace:UniversityAppV2.Models"
              x:Class="UniversityAppV2.MainPage"
-             BackgroundImageSource="b2"
+             BackgroundColor="#92b2fd"
              x:Name="MainPageRef">
 
 
@@ -24,7 +24,7 @@
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="Auto"/>
                     </Grid.RowDefinitions>
-                    <Frame BackgroundColor="AliceBlue" CornerRadius="5" Opacity=".9" Padding="10">
+                    <Frame BackgroundColor="White" CornerRadius="5" Opacity=".9" Padding="10">
                         <StackLayout>
                             <StackLayout Orientation="Horizontal">
                                 <Frame Padding="0" CornerRadius="100" Margin="30,20,0,10" Grid.Row="0" Grid.Column="0" IsClippedToBounds="True" BorderColor="Black" BackgroundColor="black">
@@ -64,7 +64,7 @@
                                         </ViewCell.ContextActions>
                                         <Grid Padding="10">
 
-                                            <Frame BackgroundColor="AliceBlue" CornerRadius="10" Opacity=".8">
+                                            <Frame BackgroundColor="White" CornerRadius="10" HasShadow="True">
                                                 <StackLayout Orientation="Horizontal">
                                                     <Label Text="{Binding TotalCUs}" WidthRequest="120" FontSize="50" Margin="5,0,0,0"/>
                                                     <StackLayout>

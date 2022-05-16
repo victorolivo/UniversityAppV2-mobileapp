@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:model="clr-namespace:UniversityAppV2.Models"
              x:Class="UniversityAppV2.AssessmentsPage"
-             BackgroundImageSource="b2"
+             BackgroundColor="#92b2fd"
              x:Name="AssessmentsRef">
 
     <ContentPage.ToolbarItems>
@@ -24,7 +24,7 @@
                         <RowDefinition Height="Auto"/>
                     </Grid.RowDefinitions>
 
-                    <Frame BackgroundColor="AliceBlue" CornerRadius="5" Opacity=".9" Padding="10">
+                    <Frame BackgroundColor="#f9fafe" CornerRadius="5" Opacity=".9" Padding="10">
                         <StackLayout>
 
                             <StackLayout Orientation="Horizontal">
@@ -47,7 +47,7 @@
                                     <Label x:Name="instructorPhoneLbl" Margin="0" Style="{StaticResource nText}" FontSize="16" Padding="0"/>
                                     <Label x:Name="instructorEmailLbl" Margin="0" Style="{StaticResource nText}" FontSize="16" Padding="0"/>
                                 </StackLayout>
-                                <Button HorizontalOptions="EndAndExpand" VerticalOptions="EndAndExpand" x:Name="viewNotesBtn" Text="Course Notes" Margin="10" Style="{StaticResource link}" FontSize="10" Padding="0" Clicked="viewNotesBtn_Clicked"/>
+                                <Button HorizontalOptions="EndAndExpand" VerticalOptions="EndAndExpand" x:Name="viewNotesBtn" Text="Course Notes" TextColor="#f9fafe" BackgroundColor="#314f8b" Margin="10" FontSize="10" Padding="0" Clicked="viewNotesBtn_Clicked"/>
                             </StackLayout>
                         </StackLayout>
                     </Frame>
@@ -72,7 +72,7 @@
                                         </ViewCell.ContextActions>
                                         <Grid Padding="10">
 
-                                            <Frame BackgroundColor="AliceBlue" CornerRadius="10" Opacity=".8">
+                                            <Frame BackgroundColor="#f9fafe" CornerRadius="10" HasShadow="True">
                                                 <StackLayout Orientation="Horizontal">
                                                     <Label Text="{Binding Type}" WidthRequest="120" FontSize="50" Margin="5,0,0,0" VerticalOptions="Center"/>
                                                     <StackLayout>

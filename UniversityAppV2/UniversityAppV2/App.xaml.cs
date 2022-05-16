@@ -12,8 +12,13 @@ namespace UniversityAppV2
         {
             InitializeComponent();
 
+            Color color = (Color)Application.Current.Resources["defaultBackbuttonColor"];
+            NavigationPage.SetIconColor(this, color);
+
             MainPage = new NavigationPage(new MainPage());
-            MainPage.BackgroundColor = Color.FromHex("#4c99fe");
+            //MainPage.BackgroundColor = Color.FromHex("#92b2fd");
+            MainPage.BackgroundColor = Color.FromHex("#314f8b");
+
         }
 
         protected override void OnStart()
@@ -63,7 +68,7 @@ namespace UniversityAppV2
             //    Type = "PA",
             //    CourseId = sampleCourse.Id
             //};
-            //TermsDB.AddAssessment(sampleAssessment2); 
+            //TermsDB.AddAssessment(sampleAssessment2);
             #endregion
         }
 

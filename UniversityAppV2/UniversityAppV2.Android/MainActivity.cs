@@ -20,7 +20,7 @@ namespace UniversityAppV2.Droid
             LoadApplication(new App());
 
             //Match status bar color with the navigation bar
-            this.SetStatusBarColor((Xamarin.Forms.Color.FromHex("#4c99fe")).ToAndroid());
+            this.SetStatusBarColor((Xamarin.Forms.Color.FromHex("#314f8b")).ToAndroid());
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
