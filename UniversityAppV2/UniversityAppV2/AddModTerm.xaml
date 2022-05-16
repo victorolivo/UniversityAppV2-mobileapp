@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:universityappv2="clr-namespace:UniversityAppV2"
              x:Class="UniversityAppV2.AddModTerm"
-             x:Name="AddModTermPage">
+             x:Name="AddModTermPage"
+             BackgroundColor="#92b2fd">
 
 
     
