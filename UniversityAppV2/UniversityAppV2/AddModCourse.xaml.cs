@@ -159,6 +159,8 @@ namespace UniversityAppV2
                 return false;
             }
 
+            if (Notes == "")
+                Notes = "None provided";
 
             return true;
         }

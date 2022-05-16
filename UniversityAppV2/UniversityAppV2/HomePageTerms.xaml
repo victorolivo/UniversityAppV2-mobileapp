@@ -35,7 +35,7 @@
                             <StackLayout Grid.Row="1" Grid.Column="0" Margin="10,0">
 
                                 <StackLayout>
-                                    <Label Text="Victor Olivo" Margin="0,0" Style="{StaticResource Header}" FontSize="20" Padding="0"/>
+                                    <Label Text="Mike Fleming" Margin="0,0" Style="{StaticResource Header}" FontSize="20" Padding="0"/>
                                     <Label Text="Graduation: May 2042" Margin="0" Style="{StaticResource nText}" FontSize="16" Padding="0"/>
                                 </StackLayout>
 
