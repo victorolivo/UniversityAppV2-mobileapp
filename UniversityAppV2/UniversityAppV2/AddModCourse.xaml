@@ -11,23 +11,23 @@
                 <Label Text="Course" Margin="15,10,0,5" FontSize="18" Style="{StaticResource nText}"/>
                 
                 <Label Text="Name:" Margin="15,10,0,0" FontSize="14" Style="{StaticResource nText}"/>
-                <Frame Padding="0" Margin="10,0">
-                    <Entry x:Name="NameField" HorizontalOptions="FillAndExpand" BackgroundColor="Wheat" Text="{Binding CourseName}"/>
+                <Frame Padding="0" Margin="10,0" Style="{StaticResource entry}">
+                    <Entry x:Name="NameField" HorizontalOptions="FillAndExpand" Text="{Binding CourseName}"/>
                 </Frame>
 
                 <Label Text="Start Date:" Margin="15,10,0,0" FontSize="14" Style="{StaticResource nText}"/>
-                <Frame Padding="0" Margin="10,0">
-                    <DatePicker x:Name="StartDateField" Format="D" VerticalOptions="CenterAndExpand" BackgroundColor="Wheat" Date="{Binding StartDate}"/>
+                <Frame Padding="0" Margin="10,0" Style="{StaticResource entry}">
+                    <DatePicker x:Name="StartDateField" Format="D" VerticalOptions="CenterAndExpand" Date="{Binding StartDate}"/>
                 </Frame>
 
                 <Label Text="End Date:" Margin="15,10,0,0" FontSize="14" Style="{StaticResource nText}"/>
-                <Frame Padding="0" Margin="10,0">
-                    <DatePicker x:Name="EndDateField" Format="D" VerticalOptions="CenterAndExpand" BackgroundColor="Wheat" Date="{Binding EndDate}"/>
+                <Frame Padding="0" Margin="10,0" Style="{StaticResource entry}">
+                    <DatePicker x:Name="EndDateField" Format="D" VerticalOptions="CenterAndExpand" Date="{Binding EndDate}"/>
                 </Frame>
 
                 <Label Text="Number of Credit Units:" Margin="15,10,0,0" FontSize="14" Style="{StaticResource nText}"/>
-                <Frame Padding="0" Margin="10,0">
-                    <Picker x:Name="NumCusField" Title="select a value" BackgroundColor="Wheat" SelectedItem="{Binding NumOfCus}">
+                <Frame Padding="0" Margin="10,0" Style="{StaticResource entry}">
+                    <Picker x:Name="NumCusField" Title="select a value" SelectedItem="{Binding NumOfCus}">
                         <Picker.ItemsSource>
                             <x:Array Type="{x:Type x:Int32}">
                                 <x:Int32>1</x:Int32>
@@ -42,8 +42,8 @@
                 </Frame>
 
                 <Label Text="Status:" Margin="15,10,0,0" FontSize="14" Style="{StaticResource nText}"/>
-                <Frame Padding="0" Margin="10,0">
-                    <Picker x:Name="StatusField" Title="select a value" BackgroundColor="Wheat" SelectedItem="{Binding Status}">
+                <Frame Padding="0" Margin="10,0" Style="{StaticResource entry}">
+                    <Picker x:Name="StatusField" Title="select a value" SelectedItem="{Binding Status}">
                         <Picker.ItemsSource>
                             <x:Array Type="{x:Type x:String}">
                                 <x:String>Not Started</x:String>
@@ -57,26 +57,26 @@
                 <Label Text="Instructor" Margin="15,20,0,5" FontSize="18" Style="{StaticResource nText}"/>
                 
                 <Label Text="Name:" Margin="15,10,0,0" FontSize="14" Style="{StaticResource nText}"/>
-                <Frame Padding="0" Margin="10,0">
-                    <Entry x:Name="InstrucNameField" HorizontalOptions="FillAndExpand" BackgroundColor="Wheat" Text="{Binding InstructorName}"/>
+                <Frame Padding="0" Margin="10,0" Style="{StaticResource entry}">
+                    <Entry x:Name="InstrucNameField" HorizontalOptions="FillAndExpand" Text="{Binding InstructorName}"/>
                 </Frame>
 
                 <Label Text="Phone:" Margin="15,10,0,0" FontSize="14" Style="{StaticResource nText}"/>
-                <Frame Padding="0" Margin="10,0">
-                    <Entry Keyboard="Telephone" x:Name="InstrucPhoneField" HorizontalOptions="FillAndExpand" BackgroundColor="Wheat" Text="{Binding Phone}"/>
+                <Frame Padding="0" Margin="10,0" Style="{StaticResource entry}">
+                    <Entry Keyboard="Telephone" x:Name="InstrucPhoneField" HorizontalOptions="FillAndExpand" Text="{Binding Phone}"/>
                 </Frame>
 
                 <Label Text="Email:" Margin="15,10,0,0" FontSize="14" Style="{StaticResource nText}"/>
-                <Frame Padding="0" Margin="10,0">
-                    <Entry Keyboard="Email"  x:Name="InstrucEmailField" HorizontalOptions="FillAndExpand" BackgroundColor="Wheat" Text="{Binding Email}"/>
+                <Frame Padding="0" Margin="10,0" Style="{StaticResource entry}">
+                    <Entry Keyboard="Email"  x:Name="InstrucEmailField" HorizontalOptions="FillAndExpand" Text="{Binding Email}"/>
                 </Frame>
 
                 <Label Text="Course Notes:" Margin="15,50,0,5" FontSize="18" Style="{StaticResource nText}"/>
-                <Frame Padding="0" Margin="10,0">
-                    <Entry x:Name="NotesField" HorizontalOptions="FillAndExpand" BackgroundColor="Wheat" Text="{Binding Notes}"/>
+                <Frame Padding="0" Margin="10,0" Style="{StaticResource entry}">
+                    <Entry x:Name="NotesField" HorizontalOptions="FillAndExpand" Text="{Binding Notes}"/>
                 </Frame>
                 
-                <Button Text="Submit" x:Name="SubmitBtn" Margin="30" VerticalOptions="EndAndExpand" HorizontalOptions="EndAndExpand" BackgroundColor="Chocolate" Clicked="SubmitBtn_Clicked" />
+                <Button Text="Submit" x:Name="SubmitBtn" Margin="30" VerticalOptions="EndAndExpand" HorizontalOptions="EndAndExpand" BackgroundColor="Beige" Clicked="SubmitBtn_Clicked" />
             </StackLayout>
 
         </ScrollView>

@@ -12,21 +12,21 @@
                 <Label x:Name="PageTitleLbl" Style="{StaticResource Header}" FontSize="30" HorizontalOptions="Center" TextColor="#292424" Margin="15,15,15,0"/>
 
                 <Label Text="Title:" Margin="15,10,0,0" FontSize="14" Style="{StaticResource nText}"/>
-                <Frame Padding="0" Margin="10,0">
-                    <Entry x:Name="TitleField" HorizontalOptions="FillAndExpand" BackgroundColor="Wheat" Text="{Binding TermTitle}"/>
+                <Frame Padding="0" Margin="10,0" Style="{StaticResource entry}">
+                    <Entry x:Name="TitleField" HorizontalOptions="FillAndExpand" Text="{Binding TermTitle}"/>
                 </Frame>
 
                 <Label Text="Start Date:" Margin="15,10,0,0" FontSize="14" Style="{StaticResource nText}"/>
-                <Frame Padding="0" Margin="10,0">
-                    <DatePicker x:Name="StartDateField" Format="D" VerticalOptions="CenterAndExpand" BackgroundColor="Wheat" Date="{Binding StartDate}"/>
+                <Frame Padding="0" Margin="10,0" Style="{StaticResource entry}">
+                    <DatePicker x:Name="StartDateField" Format="D" VerticalOptions="CenterAndExpand" Date="{Binding StartDate}"/>
                 </Frame>
 
                 <Label Text="End Date:" Margin="15,10,0,0" FontSize="14" Style="{StaticResource nText}"/>
-                <Frame Padding="0" Margin="10,0">
-                    <DatePicker x:Name="EndDateField" Format="D" VerticalOptions="CenterAndExpand" BackgroundColor="Wheat" Date="{Binding EndDate}"/>
+                <Frame Padding="0" Margin="10,0" Style="{StaticResource entry}">
+                    <DatePicker x:Name="EndDateField" Format="D" VerticalOptions="CenterAndExpand" Date="{Binding EndDate}"/>
                 </Frame>
                 
-                <Button Text="Submit" x:Name="SubmitBtn" Margin="30" VerticalOptions="EndAndExpand" HorizontalOptions="EndAndExpand" BackgroundColor="Chocolate" Clicked="SubmitBtn_Clicked"/>
+                <Button Text="Submit" x:Name="SubmitBtn" Margin="30" VerticalOptions="EndAndExpand" HorizontalOptions="EndAndExpand" BackgroundColor="Beige" Clicked="SubmitBtn_Clicked"/>
             </StackLayout>
 
         </ScrollView>

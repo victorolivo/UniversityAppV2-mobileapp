@@ -10,13 +10,13 @@
                 <Label x:Name="PageTitleLbl" Style="{StaticResource Header}" FontSize="30" HorizontalOptions="Center" TextColor="#292424" Margin="15,15,15,0"/>
 
                 <Label Text="Name:" Margin="15,10,0,0" FontSize="14" Style="{StaticResource nText}"/>
-                <Frame Padding="0" Margin="10,0">
-                    <Entry x:Name="NameField" HorizontalOptions="FillAndExpand" BackgroundColor="Wheat" Text="{Binding Name}"/>
+                <Frame Padding="0" Margin="10,0" Style="{StaticResource entry}">
+                    <Entry x:Name="NameField" HorizontalOptions="FillAndExpand" Text="{Binding Name}"/>
                 </Frame>
 
                 <Label Text="Type:" Margin="15,10,0,0" FontSize="14" Style="{StaticResource nText}"/>
-                <Frame Padding="0" Margin="10,0">
-                    <Picker x:Name="TypeField" Title="select a type" BackgroundColor="Wheat" SelectedItem="{Binding Type}">
+                <Frame Padding="0" Margin="10,0" Style="{StaticResource entry}"> 
+                    <Picker x:Name="TypeField" Title="select a type" SelectedItem="{Binding Type}">
                         <Picker.ItemsSource>
                             <x:Array Type="{x:Type x:String}">
                                 <x:String>PA</x:String>
@@ -27,11 +27,11 @@
                 </Frame>
 
                 <Label Text="Due Date:" Margin="15,10,0,0" FontSize="14" Style="{StaticResource nText}"/>
-                <Frame Padding="0" Margin="10,0">
-                    <DatePicker x:Name="DueDateField" Format="D" VerticalOptions="CenterAndExpand" BackgroundColor="Wheat" Date="{Binding DueDate}"/>
+                <Frame Padding="0" Margin="10,0" Style="{StaticResource entry}">
+                    <DatePicker x:Name="DueDateField" Format="D" VerticalOptions="CenterAndExpand" Date="{Binding DueDate}"/>
                 </Frame>
 
-                <Button Text="Submit" x:Name="SubmitBtn" Margin="30" VerticalOptions="EndAndExpand" HorizontalOptions="EndAndExpand" BackgroundColor="Chocolate" Clicked="SubmitBtn_Clicked"/>
+                <Button Text="Submit" x:Name="SubmitBtn" Margin="30" VerticalOptions="EndAndExpand" HorizontalOptions="EndAndExpand" BackgroundColor="Beige" Clicked="SubmitBtn_Clicked"/>
             </StackLayout>
 
         </ScrollView>
