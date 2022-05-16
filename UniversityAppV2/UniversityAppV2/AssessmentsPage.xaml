@@ -4,6 +4,11 @@
              x:Class="UniversityAppV2.AssessmentsPage"
              BackgroundImageSource="b2"
              x:Name="AssessmentsRef">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="Add" Clicked="AddAssessmentBtn_Clicked"/>
+    </ContentPage.ToolbarItems>
+
     <ContentPage.Content>
 
         <RefreshView x:Name="AssessmentsRefreshView" Refreshing="AssessmentsRefreshView_Refreshing">
