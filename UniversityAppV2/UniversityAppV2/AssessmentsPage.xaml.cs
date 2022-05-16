@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UniversityAppV2.Models;
 using UniversityAppV2.Services;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -64,9 +65,18 @@ namespace UniversityAppV2
             Navigation.PushAsync(new AddModAssessment(false, CurrentCourse, null));
         }
 
-        private void viewNotesBtn_Clicked(object sender, EventArgs e)
+        private async void viewNotesBtn_Clicked(object sender, EventArgs e)
         {
-            App.Current.MainPage.DisplayAlert($"{CurrentCourse.Name} Notes", CurrentCourse.Notes, "Ok");
+            bool selection = await DisplayAlert($"{CurrentCourse.Name} Notes", CurrentCourse.Notes, "Ok", "Share Notes");
+            if (!selection)
+            {
+                await Share.RequestAsync(new ShareTextRequest
+                {
+                    Text = CurrentCourse.Notes,
+                    Title = "Share Notes"
+                });
+            }
+                
         }
     }
 }
