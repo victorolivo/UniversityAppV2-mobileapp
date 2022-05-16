@@ -20,7 +20,7 @@
                 <Setter Property="TextColor" Value="Sienna"/>
                 <Setter Property="HorizontalOptions" Value="End"/>
                 <Setter Property="Padding" Value="0"/>
-                <Setter Property="Opacity" Value="0.4"/>
+                <Setter Property="Opacity" Value="0.8"/>
             </Style>
             <Style TargetType="Frame" x:Key="entry">
                 <Setter Property="Opacity" Value="0.7"/>

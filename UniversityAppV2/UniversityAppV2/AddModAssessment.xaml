@@ -16,7 +16,7 @@
 
                 <Label Text="Type:" Margin="15,10,0,0" FontSize="14" Style="{StaticResource nText}"/>
                 <Frame Padding="0" Margin="10,0" Style="{StaticResource entry}"> 
-                    <Picker x:Name="TypeField" Title="select a type" SelectedItem="{Binding Type}">
+                    <Picker x:Name="TypeField" Title="Select Type" SelectedItem="{Binding Type}">
                         <Picker.ItemsSource>
                             <x:Array Type="{x:Type x:String}">
                                 <x:String>PA</x:String>
@@ -29,6 +29,23 @@
                 <Label Text="Due Date:" Margin="15,10,0,0" FontSize="14" Style="{StaticResource nText}"/>
                 <Frame Padding="0" Margin="10,0" Style="{StaticResource entry}">
                     <DatePicker x:Name="DueDateField" Format="D" VerticalOptions="CenterAndExpand" Date="{Binding DueDate}"/>
+                </Frame>
+
+                <Label Text="Notification:" Margin="15,10,0,0" FontSize="14" Style="{StaticResource nText}"/>
+                <Frame Padding="0" Margin="10,0" Style="{StaticResource entry}">
+                    <Picker x:Name="NotificationField" Title="Set Notification" SelectedItem="{Binding Notification}">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>None</x:String>
+                                <x:String>5 Seconds From Now (Test)</x:String>
+                                <x:String>On Due Date</x:String>
+                                <x:String>1 Day Before Due Date</x:String>
+                                <x:String>3 Days Before Due Date</x:String>
+                                <x:String>1 Week Before Due Date</x:String>
+                                <x:String>2 Weeks Before Due Date</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
                 </Frame>
 
                 <Button Text="Submit" x:Name="SubmitBtn" Margin="30" VerticalOptions="EndAndExpand" HorizontalOptions="EndAndExpand" BackgroundColor="Beige" Clicked="SubmitBtn_Clicked"/>
