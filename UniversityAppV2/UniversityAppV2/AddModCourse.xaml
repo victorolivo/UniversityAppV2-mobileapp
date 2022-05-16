@@ -71,6 +71,23 @@
                     <Entry Keyboard="Email"  x:Name="InstrucEmailField" HorizontalOptions="FillAndExpand" Text="{Binding Email}"/>
                 </Frame>
 
+                <Label Text="Notification:" Margin="15,10,0,0" FontSize="14" Style="{StaticResource nText}"/>
+                <Frame Padding="0" Margin="10,0" Style="{StaticResource entry}">
+                    <Picker x:Name="NotificationField" Title="Set Notification" SelectedItem="{Binding Notification}">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>None</x:String>
+                                <x:String>5 Seconds From Now (Test)</x:String>
+                                <x:String>On Due Date</x:String>
+                                <x:String>1 Day Before Due Date</x:String>
+                                <x:String>3 Days Before Due Date</x:String>
+                                <x:String>1 Week Before Due Date</x:String>
+                                <x:String>2 Weeks Before Due Date</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+                </Frame>
+                
                 <Label Text="Course Notes:" Margin="15,50,0,5" FontSize="18" Style="{StaticResource nText}"/>
                 <Frame Padding="0" Margin="10,0" Style="{StaticResource entry}">
                     <Entry x:Name="NotesField" HorizontalOptions="FillAndExpand" Text="{Binding Notes}"/>
