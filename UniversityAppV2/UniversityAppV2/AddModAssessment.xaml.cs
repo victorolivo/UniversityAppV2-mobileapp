@@ -14,6 +14,7 @@ namespace UniversityAppV2
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AddModAssessment : ContentPage
     {
+        //Properties for data binding with xaml
         public string Name { get; set; }
         public string Type { get; set; }
         public DateTime DueDate { get; set; }
@@ -22,6 +23,7 @@ namespace UniversityAppV2
         public Course CurrentCourse { get; set; }
         public bool Modify { get; set; }
 
+        //Modify view according to action: Creating New or Modifying Existing
         public AddModAssessment(bool modify, Course c, Assessment a)
         {
             InitializeComponent();
@@ -39,6 +41,8 @@ namespace UniversityAppV2
                 PageTitleLbl.Text = "Add Assessment";
         }
 
+        //Trigger: internal
+        //Action: Prefill Fields if in modify mode
         private void prefillFields()
         {
             PageTitleLbl.Text = "Modify Assessment";
@@ -47,6 +51,8 @@ namespace UniversityAppV2
             DueDateField.Date = CurrentAssessment.DueDate;
         }
 
+        //Trigger: User attempts to submit
+        //Action: If valid, performs appropiate action according to mode: Creates New or Saves changes made to database
         private void SubmitBtn_Clicked(object sender, EventArgs e)
         {
             if (FormValid())
@@ -76,6 +82,8 @@ namespace UniversityAppV2
             }
         }
 
+        //Trigger: internal
+        //Action: Input validation
         private bool FormValid()
         {
             //Input Validations
@@ -99,6 +107,8 @@ namespace UniversityAppV2
             return true;
         }
 
+        //Trigger: internal; When form is being submitted
+        //Action: Creates notification
         private void CreateNotification()
         {
             DateTime notificationDate = DueDate;

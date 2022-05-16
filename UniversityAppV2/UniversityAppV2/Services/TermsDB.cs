@@ -9,10 +9,13 @@ namespace UniversityAppV2.Services
 {
     internal class TermsDB
     {
+
         static SQLiteConnection db;
 
+        //SQLite connection initialization
         static void Init()
         {
+            //If connection is already established exit and continue
             if (db != null)
             {
                 return;
@@ -51,7 +54,7 @@ namespace UniversityAppV2.Services
         public static void RemoveTerm(int id)
         {
             Init();
-
+            //Remove all courses inside the term before deleting it
             IEnumerable<Course> coursesInTerm = GetAllCoursesForTerm(id);
 
             if(coursesInTerm != null)
@@ -68,7 +71,7 @@ namespace UniversityAppV2.Services
         public static void RemoveCourse(int id)
         {
             Init();
-
+            //Remove all assessments inside the course before deleting it
             IEnumerable<Assessment> assessmentsInCourse = GetAllAssessmentsForCourse(id);
 
             if (assessmentsInCourse != null)

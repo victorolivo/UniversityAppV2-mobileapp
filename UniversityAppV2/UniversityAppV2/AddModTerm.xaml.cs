@@ -13,6 +13,7 @@ namespace UniversityAppV2
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AddModTerm : ContentPage
     {
+        //Properties for data binding with xaml
         public string TermTitle { get; set; }
         public DateTime StartDate { get; set; } = DateTime.Now;
         public DateTime EndDate { get; set; } = DateTime.Now.AddMonths(6);
@@ -20,6 +21,7 @@ namespace UniversityAppV2
         public bool Modify { get; set; }
         public Term CurrentTerm { get; set; }
 
+        //Modify view according to action: Creating New or Modifying Existing
         public AddModTerm(bool modify, Term term)
         {
             InitializeComponent();
@@ -34,6 +36,8 @@ namespace UniversityAppV2
                 PageTitleLbl.Text = "New Term";
         }
 
+        //Trigger: internal
+        //Action: Prefill Fields if in modify mode
         private void PrefillTxtFields()
         {
             PageTitleLbl.Text = "Modify Term";
@@ -42,6 +46,8 @@ namespace UniversityAppV2
             EndDateField.Date = CurrentTerm.EndDate;
         }
 
+        //Trigger: User attempts to submit
+        //Action: If valid, performs appropiate action according to mode: Creates New or Saves changes made to database
         private void SubmitBtn_Clicked(object sender, EventArgs e)
         {
             if (FormValid())
@@ -73,6 +79,8 @@ namespace UniversityAppV2
 
         }
 
+        //Trigger: internal
+        //Action: Input validation
         private bool FormValid()
         {
             if (string.IsNullOrWhiteSpace(TitleField.Text))

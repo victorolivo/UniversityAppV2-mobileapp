@@ -14,7 +14,7 @@ namespace UniversityAppV2
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AddModCourse : ContentPage
     {
-
+        //Properties for data binding with xaml
         public string CourseName { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
@@ -33,6 +33,7 @@ namespace UniversityAppV2
         public bool Modify { get; set; }
         public Course CurrentCourse { get; set; }
 
+        //Modify view according to action: Creating New or Modifying Existing
         public AddModCourse(bool modify, Term t, Course c)
         {
             InitializeComponent();
@@ -51,6 +52,8 @@ namespace UniversityAppV2
                 PageTitleLbl.Text = "New Course";
         }
 
+        //Trigger: internal
+        //Action: Prefill Fields if in modify mode
         private void PrefillTxtFields()
         {
             PageTitleLbl.Text = "Modify Course";
@@ -66,6 +69,8 @@ namespace UniversityAppV2
 
         }
 
+        //Trigger: User attempts to submit
+        //Action: If valid, performs appropiate action according to mode: Creates New or Saves changes made to database
         private void SubmitBtn_Clicked(object sender, EventArgs e)
         {
             if (FormValid())
@@ -112,6 +117,8 @@ namespace UniversityAppV2
             }
         }
 
+        //Trigger: internal
+        //Action: Input validation
         private bool FormValid()
         {
             //for email validation
