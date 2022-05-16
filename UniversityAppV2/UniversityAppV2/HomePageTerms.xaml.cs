@@ -18,7 +18,7 @@ namespace UniversityAppV2
             termList.ItemsSource = TermsDB.GetAllTerms();
         }
 
-        //Trigger: Event (User wants to add an new term)
+        //Trigger: Event (User wants to add a new term)
         //Action: Takes user to a new page to enter and save new term details
         private void AddTermBtn_Clicked(object sender, EventArgs e)
         {
