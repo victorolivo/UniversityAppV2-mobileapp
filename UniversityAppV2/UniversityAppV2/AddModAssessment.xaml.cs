@@ -35,6 +35,9 @@ namespace UniversityAppV2
             DueDateField.MaximumDate = CurrentCourse.EndDate;
             DueDate = CurrentCourse.EndDate;
 
+            //Check assesment type
+            
+
             if (modify)
                 prefillFields();
             else
@@ -47,8 +50,16 @@ namespace UniversityAppV2
         {
             PageTitleLbl.Text = "Modify Assessment";
             NameField.Text = CurrentAssessment.Name;
+
+            if (CurrentAssessment.Type == "OA")
+                CurrentCourse.OA = false;
+            else
+                CurrentCourse.PA = false;
+
             TypeField.SelectedItem = CurrentAssessment.Type;
             DueDateField.Date = CurrentAssessment.DueDate;
+            NotificationField.SelectedItem = "None";
+            Notification = "None";
         }
 
         //Trigger: User attempts to submit
@@ -63,7 +74,13 @@ namespace UniversityAppV2
                     CurrentAssessment.Type = Type;
                     CurrentAssessment.DueDate = DueDate;
 
+                    if (CurrentAssessment.Type == "OA")
+                        CurrentCourse.OA = true;
+                    else
+                        CurrentCourse.PA = true;
+
                     TermsDB.UpdateAssessment(CurrentAssessment);
+                    TermsDB.UpdateCourse(CurrentCourse);
                 }
                 else
                 {
@@ -75,7 +92,13 @@ namespace UniversityAppV2
                         CourseId = CurrentCourse.Id
                     };
 
+                    if (a.Type == "OA")
+                        CurrentCourse.OA = true;
+                    else
+                        CurrentCourse.PA = true;
+
                     TermsDB.AddAssessment(a);
+                    TermsDB.UpdateCourse(CurrentCourse);
                 }
 
                 Navigation.PopAsync();
@@ -94,7 +117,7 @@ namespace UniversityAppV2
             }
             else if (Type == null)
             {
-                App.Current.MainPage.DisplayAlert("Invalid Assessment Type", "Please select a type for this assessment", "Ok");
+                App.Current.MainPage.DisplayAlert("Invalid Assessment Type", "Assessment type was not selected or there is already an assessment of this type for this course", "Ok");
                 return false;
             }
             else if (Notification == null)
@@ -150,6 +173,30 @@ namespace UniversityAppV2
                     break;
                 default:
                     break;
+            }
+            
+        }
+
+        private void TypeField_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //DisplayAlert("Test Info", $"Type prop val:{Type}\nType field val:{TypeField.SelectedItem.ToString()}\nCurrentCourse OA:{CurrentCourse.OA}\nCurrentCourse PA:{CurrentCourse.PA}", "Ok");
+            if (TypeField == null)
+                return;
+            else if(TypeField.SelectedItem.ToString() == "OA" && CurrentCourse.OA)
+            {
+                DisplayAlert("Invalid Assessment Type", "An assessment of this type already exist for this course", "Ok");
+                Type = null;
+                TypeField.BackgroundColor = Color.Salmon;
+            }
+            else if(TypeField.SelectedItem.ToString() == "PA" && CurrentCourse.PA)
+            {
+                DisplayAlert("Invalid Assessment Type", "An assessment of this type already exist for this course", "Ok");
+                Type = null;
+                TypeField.BackgroundColor = Color.Salmon;
+            }
+            else
+            {
+                TypeField.BackgroundColor = Color.Default;
             }
             
         }

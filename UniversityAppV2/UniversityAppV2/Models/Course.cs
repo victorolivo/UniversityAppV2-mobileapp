@@ -19,6 +19,8 @@ namespace UniversityAppV2.Models
         public string InstructorEmail { get; set; }
         public string Notes { get; set; } = "";
         public int TermId { get; set; }
+        public bool OA { get; set; } = false;
+        public bool PA { get; set; } = false;
 
         //Fomatted Dates
         public string FStartDate

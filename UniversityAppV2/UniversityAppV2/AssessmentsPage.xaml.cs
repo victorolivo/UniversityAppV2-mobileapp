@@ -66,8 +66,13 @@ namespace UniversityAppV2
         {
             var assessment = ((MenuItem)sender).BindingContext as Assessment;
 
-            TermsDB.RemoveAssessment(assessment.Id);
+            if (assessment.Type == "OA")
+                CurrentCourse.OA = false;
+            else
+                CurrentCourse.PA = false;
 
+            TermsDB.RemoveAssessment(assessment.Id);
+            TermsDB.UpdateCourse(CurrentCourse);
             AssessmentsRefreshView_Refreshing(sender, e);
         }
 
@@ -75,7 +80,14 @@ namespace UniversityAppV2
         //Action: Takes user to a new page to enter and save new assessment details
         private void AddAssessmentBtn_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new AddModAssessment(false, CurrentCourse, null));
+            if(CurrentCourse.OA && CurrentCourse.PA)
+            {
+                DisplayAlert($"Maximum Reached", "There is a maximum of two assessments per course, one of each type.", "Ok");
+            }
+            else
+            {
+                Navigation.PushAsync(new AddModAssessment(false, CurrentCourse, null));
+            }
         }
 
         //Trigger: Event (User wants to see current course notes)

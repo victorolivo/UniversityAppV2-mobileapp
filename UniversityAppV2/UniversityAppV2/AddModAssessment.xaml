@@ -17,7 +17,7 @@
 
                 <Label Text="Type:" Margin="15,10,0,0" FontSize="14" Style="{StaticResource nText}"/>
                 <Frame Padding="0" Margin="10,0" Style="{StaticResource entry}"> 
-                    <Picker x:Name="TypeField" Title="Select Type" SelectedItem="{Binding Type}">
+                    <Picker x:Name="TypeField" Title="Select Type" SelectedItem="{Binding Type}" SelectedIndexChanged="TypeField_SelectedIndexChanged">
                         <Picker.ItemsSource>
                             <x:Array Type="{x:Type x:String}">
                                 <x:String>PA</x:String>
