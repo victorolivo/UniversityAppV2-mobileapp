@@ -38,6 +38,7 @@ namespace UniversityAppV2
         //Modify view according to action: Creating New or Modifying Existing
         public AddModCourse(bool modify, Term t, Course c)
         {
+            NavigationPage.SetHasBackButton(this, false);
             InitializeComponent();
             BindingContext = this;
             CurrentTerm = t;
@@ -227,5 +228,9 @@ namespace UniversityAppV2
 
         }
 
+        private void Cancel_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PopAsync();
+        }
     }
 }

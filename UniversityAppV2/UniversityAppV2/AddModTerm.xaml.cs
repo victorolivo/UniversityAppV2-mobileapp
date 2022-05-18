@@ -24,6 +24,7 @@ namespace UniversityAppV2
         //Modify view according to action: Creating New or Modifying Existing
         public AddModTerm(bool modify, Term term)
         {
+            NavigationPage.SetHasBackButton(this, false);
             InitializeComponent();
             Modify = modify;
             CurrentTerm = term;
@@ -95,6 +96,11 @@ namespace UniversityAppV2
             } 
 
             return true;
+        }
+
+        private void Cancel_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PopAsync();
         }
     }
 }

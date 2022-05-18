@@ -26,6 +26,7 @@ namespace UniversityAppV2
         //Modify view according to action: Creating New or Modifying Existing
         public AddModAssessment(bool modify, Course c, Assessment a)
         {
+            NavigationPage.SetHasBackButton(this, false);
             InitializeComponent();
             BindingContext = this;
             CurrentAssessment = a;
@@ -60,6 +61,20 @@ namespace UniversityAppV2
             DueDateField.Date = CurrentAssessment.DueDate;
             NotificationField.SelectedItem = "None";
             Notification = "None";
+        }
+
+        protected override bool OnBackButtonPressed()
+        {
+            if (Modify)
+            {
+                if (CurrentAssessment.Type == "OA")
+                    CurrentCourse.OA = true;
+                else
+                    CurrentCourse.PA = true;
+            }
+            
+            return false;
+            
         }
 
         //Trigger: User attempts to submit
@@ -179,7 +194,6 @@ namespace UniversityAppV2
 
         private void TypeField_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //DisplayAlert("Test Info", $"Type prop val:{Type}\nType field val:{TypeField.SelectedItem.ToString()}\nCurrentCourse OA:{CurrentCourse.OA}\nCurrentCourse PA:{CurrentCourse.PA}", "Ok");
             if (TypeField == null)
                 return;
             else if(TypeField.SelectedItem.ToString() == "OA" && CurrentCourse.OA)
@@ -199,6 +213,12 @@ namespace UniversityAppV2
                 TypeField.BackgroundColor = Color.Default;
             }
             
+        }
+
+        private void Cancel_Clicked(object sender, EventArgs e)
+        {
+            this.OnBackButtonPressed();
+            Navigation.PopAsync();
         }
     }
 }

@@ -4,6 +4,11 @@
              x:Class="UniversityAppV2.AddModAssessment"
              x:Name="AddModAssessmentRef"
              BackgroundColor="#92b2fd">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="Cancel" Text="Cancel" Clicked="Cancel_Clicked"/>
+    </ContentPage.ToolbarItems>
+
     <ContentPage.Content>
         <ScrollView>
 
