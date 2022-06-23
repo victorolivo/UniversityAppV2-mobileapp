@@ -17,34 +17,44 @@ is closed. A wireframe has also been created as a visual guide, representing the
 # Final Product Screenshots
 
 Home Screen
+
 ![Home screen](https://user-images.githubusercontent.com/84644999/175377042-f9babed5-e304-4019-adb3-d5775693d4bf.png)
 
 Term View
+
 ![Term View](https://user-images.githubusercontent.com/84644999/175377097-2013a3c3-b808-434a-878c-121b9441890a.png)
 
 Input Validations (Example1)
+
 ![Input Validations Ex](https://user-images.githubusercontent.com/84644999/175377158-01b82cab-9eda-4df7-862d-cc04c82cd0c3.png)
 
 Setting Notification for New Course
+
 ![Set Notification - Term](https://user-images.githubusercontent.com/84644999/175377442-b0a76004-5b2c-4f4f-a8e1-e9ff00eb591a.png)
 
 Course Notes
+
 ![Course Notes](https://user-images.githubusercontent.com/84644999/175377728-a475d8bf-a633-4fab-b4cf-556e04c8be4c.png)
 
 Course Created and added to Term
+
 ![Course Created](https://user-images.githubusercontent.com/84644999/175378004-4c2f7492-9a23-4f91-8cd1-94d2b9179c6d.png)
 ![Screenshot 2022-06-23 130637](https://user-images.githubusercontent.com/84644999/175378150-63626ac7-e893-415b-83c2-26526a4c5686.png)
 
 Received Notification
+
 ![Notification](https://user-images.githubusercontent.com/84644999/175378330-38ad59d7-40b0-427e-a477-959961461da7.png)
 
 Course View
+
 ![Course View](https://user-images.githubusercontent.com/84644999/175378545-96d935f8-ea65-45fd-a9ff-54e4aeb89f06.png)
 
 Sharing Course Notes
+
 ![Share Notes](https://user-images.githubusercontent.com/84644999/175378739-bde1da52-ad02-4cdf-ad82-b611c6b615c3.png)
 
 Add Assessment to Course View
+
 ![Add Assessment to Course View](https://user-images.githubusercontent.com/84644999/175378988-4ce308ea-5a4e-410a-9c04-010f934d5239.png)
 ![Screenshot 2022-06-23 131226](https://user-images.githubusercontent.com/84644999/175379063-2f3e12ee-cb48-4326-b61c-96911f1fa264.png)
 
